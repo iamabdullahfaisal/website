@@ -3,22 +3,28 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Contact Us — Royal Traders</title>
+  <link rel="icon" href="assets/images/logo.png">
+  <link rel="apple-touch-icon" href="assets/images/logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <header class="site-header"><div class="container header-inner"><a class="brand-mark" href="index.html"><span class="brand-badge">RT</span><span><strong>Royal Traders</strong><small>Securing What Matters Most</small></span></a><button id="menuBtn" class="menu-btn">☰</button><nav class="nav" id="nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="products.html">Products</a><a href="brands.html">Brands</a><a href="gallery.html">Projects</a><a href="contact.html">Contact Us</a></nav></div></header>
+  <header class="site-header"><div class="container header-inner"><a class="brand-mark" href="index.html"><img class="brand-logo" src="assets/images/logo.png" alt="Royal Traders logo"><span><strong>Royal Traders</strong><small>Securing What Matters Most</small></span></a><button id="menuBtn" class="menu-btn">☰</button><nav class="nav" id="nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="products.html">Products</a><a href="brands.html">Brands</a><a href="gallery.html">Projects</a><a href="contact.html">Contact Us</a></nav></div></header>
   <main>
     <section class="page-hero"><div class="container"><span class="section-kicker">Contact Us</span><h1>Start your security project with Royal Traders</h1><p>Request a quote, ask about products, or get support from our Lahore team.</p></div></section>
     <section class="section container">
       <div class="contact-layout">
-        <form class="contact-form reveal" action="#" method="post">
+        <form class="contact-form reveal" id="contactForm" action="https://formsubmit.co/ajax/mianraheel62@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Royal Traders website inquiry">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
           <div class="field"><label>Name</label><input type="text" name="name" placeholder="Your full name" required></div>
           <div class="field"><label>Phone</label><input type="tel" name="phone" placeholder="0300-0000000" required></div>
           <div class="field"><label>Email</label><input type="email" name="email" placeholder="name@example.com"></div>
           <div class="field"><label>Service Interested In</label><select name="service"><option>CCTV Camera Systems</option><option>Fire Alarm & Detection</option><option>Electric Fence Systems</option><option>Access Control</option><option>Intercom Systems</option><option>Home & Office Automation</option></select></div>
           <div class="field"><label>Message</label><textarea name="message" rows="5" placeholder="Tell us about your site or requirement..."></textarea></div>
-          <div class="page-actions"><button class="btn btn-primary" type="submit">Submit</button><a href="https://wa.me/923004554278" target="_blank" rel="noreferrer" class="btn btn-outline">Chat with us on WhatsApp</a></div>
+          <div class="page-actions"><button class="btn btn-primary" type="submit" id="submitBtn">Submit</button><a href="https://wa.me/923004554278" target="_blank" rel="noreferrer" class="btn btn-outline">Chat with us on WhatsApp</a></div>
+          <p id="formStatus" style="margin:.9rem 0 0;color:var(--muted)"></p>
         </form>
 
         <div class="contact-side">
@@ -42,6 +48,7 @@
       </div>
     </section>
   </main>
+  <a class="shopify-fab" href="https://shop.royaltradersofficial.com" target="_blank" rel="noreferrer">Shopify</a>
   <a class="whatsapp-fab" href="https://wa.me/923004554278" target="_blank">💬</a>
   <script src="assets/js/main.js"></script>
 </body>

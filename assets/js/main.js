@@ -26,4 +26,41 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.reveal').forEach(function (el, i) {
     el.style.animationDelay = (i * 0.08) + 's';
   });
+
+  var contactForm = document.getElementById('contactForm');
+  var submitBtn = document.getElementById('submitBtn');
+  var formStatus = document.getElementById('formStatus');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+      }
+      if (formStatus) {
+        formStatus.textContent = 'Sending your message...';
+      }
+
+      var formData = new FormData(contactForm);
+      fetch(contactForm.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formData
+      }).then(function (response) {
+        if (response.ok) {
+          contactForm.reset();
+          if (formStatus) formStatus.textContent = 'Message sent successfully. We will contact you soon.';
+        } else {
+          throw new Error('Form submit failed');
+        }
+      }).catch(function () {
+        if (formStatus) formStatus.textContent = 'Message could not be sent. Please use WhatsApp or try again.';
+      }).finally(function () {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Submit';
+        }
+      });
+    });
+  }
 });

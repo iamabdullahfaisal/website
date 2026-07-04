@@ -36,6 +36,28 @@ What I added now:
 - Placeholder SVG images: `assets/images/hero.svg`, `assets/images/project1.svg`, `assets/images/project2.svg`, `assets/images/project3.svg`.
 - The hero background in `assets/css/style.css` now uses `assets/images/hero.svg`.
 - Embedded Google Map iframe in `contact.html` pointing to the stated Lahore address.
+- The contact form now sends through FormSubmit and should not open a broken page.
+- A Shopify Buy Button mount point has been added on `products.html`.
+
+Important setup for the form:
+
+- The form uses FormSubmit with `mianraheel62@gmail.com`.
+- On first use, FormSubmit may ask you to confirm the email address from their message.
+- If you prefer your own backend later, you can replace the FormSubmit endpoint with your server.
+
+Shopify setup for products page:
+
+1. Create or open your Shopify store.
+2. Go to the Buy Button channel or Shopify admin embed options.
+3. Generate a Buy Button for a product or collection.
+4. Paste the generated code or configuration into `assets/js/shopify-buy-button.js`.
+5. Replace the placeholder domain and storefront access token in the commented example.
+
+For Vercel deployment:
+
+- Push this folder to GitHub.
+- Import the repository into Vercel.
+- Deploy as a static site.
 
 Next steps (optional):
 - Replace the SVG placeholders with real photos (web-optimized JPEG/WEBP) in `assets/images`.
