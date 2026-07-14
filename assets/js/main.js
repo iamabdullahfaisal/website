@@ -1,16 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
+  var isHomePage = window.location.pathname.endsWith('/index.html') || window.location.pathname.endsWith('/');
+  document.body.classList.toggle('inner-page', !isHomePage);
+
   var menuBtn = document.getElementById('menuBtn');
   var nav = document.getElementById('nav');
 
   if (menuBtn && nav) {
     menuBtn.addEventListener('click', function () {
       nav.classList.toggle('open');
-    });
-
-    document.querySelectorAll('#nav a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        nav.classList.remove('open');
-      });
     });
   }
 
